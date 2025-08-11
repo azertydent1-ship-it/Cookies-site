@@ -20,20 +20,20 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    select, input[type="text"], input[type="submit"] {
+    select, input[type="text"], button {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    input[type="submit"] {
+    button {
       background-color: #a0522d;
       color: white;
       border: none;
       cursor: pointer;
     }
-    input[type="submit"]:hover {
+    button:hover {
       background-color: #8b4513;
     }
     .info-paiement {
@@ -53,9 +53,9 @@
     <p><strong>Étape 2 :</strong> Entrez le code de transaction reçu ci-dessous pour valider votre commande.</p>
   </div>
 
-  <form action="merci.html" method="get">
+  <form id="commandeForm">
     <label for="produit">Choisissez votre saveur :</label>
-    <select name="produit" id="produit" required>
+    <select id="produit" required>
       <option value="">-- Sélectionnez --</option>
       <option value="Choco Craquant">Choco Craquant</option>
       <option value="Vanille Passion">Vanille Passion</option>
@@ -65,10 +65,33 @@
     </select>
 
     <label for="transaction">Code de transaction MoMo :</label>
-    <input type="text" id="transaction" name="transaction" placeholder="Ex: 123456789" required>
+    <input type="text" id="transaction" placeholder="Ex: 123456789" pattern="[0-9]{9}" title="Le code doit contenir 9 chiffres" required>
 
-    <input type="submit" value="Valider la commande">
+    <button type="submit">Valider la commande</button>
   </form>
+
+  <script>
+    document.getElementById("commandeForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      let produit = document.getElementById("produit").value;
+      let code = document.getElementById("transaction").value;
+
+      // Vérifie que le code a bien 9 chiffres
+      let regex = /^[0-9]{9}$/;
+      if (!regex.test(code)) {
+        alert("❌ Le code de transaction doit contenir exactement 9 chiffres.");
+        return;
+      }
+
+      // Message pour WhatsApp
+      let message = `Bonjour, j'ai payé pour la saveur "${produit}" avec le code de transaction ${code}.`;
+      let whatsappURL = `https://wa.me/22996600126?text=${encodeURIComponent(message)}`;
+      
+      // Redirection vers WhatsApp
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
 
 </body>
 </html>
