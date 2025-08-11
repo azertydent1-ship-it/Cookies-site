@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie Shan's Cookies</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #6b3e26;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .cookie-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .cookie-card:hover {
+      transform: scale(1.03);
+    }
+
+    .cookie-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cookie-card h3 {
+      margin: 15px 0 5px;
+      color: #6b3e26;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .cookie-card p {
+      text-align: center;
+      color: #444;
+      padding: 0 15px 10px;
+      font-size: 0.95em;
+    }
+
+    .order-btn {
+      display: block;
+      margin: 10px auto 20px;
+      padding: 10px 20px;
+      background-color: #f4a261;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #e76f51;
+    }
+
+    @media (max-width: 768px) {
+      .cookie-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Nos Cookies Artisanaux</h1>
+  <div class="gallery">
+    <!-- Cookie 1 -->
+    <div class="cookie-card">
+      <img src="https://sallysbakingaddiction.com/wp-content/uploads/2013/05/chewy-chocolate-chip-cookies-5.jpg" alt="Choco Classique">
+      <h3>Choco Classique</h3>
+      <p>Le cookie fondant aux pépites de chocolat, un incontournable.</p>
+      <a href="#commande-choco" class="order-btn">Commander</a>
+    </div>
+
+    <!-- Cookie 2 -->
+    <div class="cookie-card">
+      <img src="https://moribyan.com/wp-content/uploads/2022/05/Cookies-and-Cream-Cookies-Feature.jpg" alt="Cookies & Cream">
+      <h3>Cookies & Cream</h3>
+      <p>Un mélange irrésistible de crème vanillée et morceaux d’Oreo.</p>
+      <a href="#commande-cream" class="order-btn">Commander</a>
+    </div>
+
+    <!-- Cookie 3 -->
+    <div class="cookie-card">
+      <img src="https://assets.epicurious.com/photos/5fd8e6c9c9d9c6b9e0c2e5a2/1:1/w_2560%2Cc_limit/Italian-Butter-Cookies_RECIPE_IG_122220_25239.jpg" alt="Beurre Italien">
+      <h3>Beurre Italien</h3>
+      <p>Délicat et sablé, parfait avec un café ou un thé.</p>
+      <a href="#commande-beurre" class="order-btn">Commander</a>
+    </div>
+  </div>
+</body>
+</html>
