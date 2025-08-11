@@ -2,115 +2,75 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Commande Cookies – Shan's Délices</title>
+  <title>Commande Shan's Cookies Délices</title>
   <style>
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: #fff8e1;
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
       padding: 20px;
-      color: #4e342e;
-    }
-    form {
       max-width: 600px;
       margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    input, select, textarea {
+    h1 {
+      color: #a0522d;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="text"], button {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 8px;
     }
     button {
-      background-color: #d81b60;
+      background-color: #25D366;
       color: white;
       border: none;
-      padding: 10px;
-      margin-top: 20px;
-      border-radius: 8px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #ad1457;
-    }
-    .info {
-      background: #ffe0b2;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-    h2 {
-      text-align: center;
-      color: #d81b60;
-    }
-    optgroup {
-      font-weight: bold;
-      color: #6a1b9a;
+      background-color: #1da851;
     }
   </style>
 </head>
 <body>
 
-  <form action="mailto:azerty.dent1@gmail.com" method="POST" enctype="text/plain">
-    <h2>Commande Cookies</h2>
-    
-    <label>Nom :</label>
-    <input type="text" name="Nom" required>
+  <h1>🍪 Commande Shan's Cookies Délices</h1>
 
-    <label>Numéro de téléphone :</label>
-    <input type="text" name="Téléphone" required>
-
-    <label>Choix des cookies :</label>
-    <select name="Produit" required>
-      <optgroup label="🍯 Saveurs uniques">
-        <option>Vanille</option>
-        <option>Noisettes Grillées</option>
-        <option>Miel Doré</option>
-        <option>Muscade</option>
-        <option>Chocolat Noir</option>
-        <option>Chocolat Blanc</option>
-      </optgroup>
-      <optgroup label="🍪 Duos deux saveurs">
-        <option>Vanille & Noisettes</option>
-        <option>Vanille & Miel</option>
-        <option>Miel & Chocolat Noir</option>
-        <option>Chocolat Blanc & Muscade</option>
-        <option>Vanille & Chocolat Noir</option>
-        <option>Noisettes & Chocolat Blanc</option>
-      </optgroup>
-      <optgroup label="🍫 Trios de saveurs">
-        <option>Vanille, Noisettes & Miel</option>
-        <option>Vanille, Chocolat Noir & Noisettes</option>
-        <option>Muscade, Chocolat Noir & Noisettes</option>
-        <option>Vanille, Miel & Chocolat Blanc</option>
-        <option>Noisettes, Muscade & Chocolat Noir</option>
-      </optgroup>
+  <form id="formCommande" onsubmit="envoyerWhatsApp(); return false;">
+    <label for="produit">Choisissez votre saveur :</label>
+    <select name="produit" id="produit" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="Choco Craquant">Choco Craquant</option>
+      <option value="Vanille Passion">Vanille Passion</option>
+      <option value="Caramel Beurre Salé">Caramel Beurre Salé</option>
+      <option value="Noix de Coco Rêvée">Noix de Coco Rêvée</option>
+      <option value="Citron Gingembre">Citron Gingembre</option>
     </select>
 
-    <label>Quantité :</label>
-    <input type="number" name="Quantité" min="1" required>
+    <label for="transaction">Code de transaction MoMo :</label>
+    <input type="text" id="transaction" name="transaction" placeholder="Ex: 123456789" required>
 
-    <div class="info">
-      <p><strong>Montant à payer :</strong> (à calculer selon ton tarif)</p>
-      <p><strong>MTN MoMo :</strong> +22996600126</p>
-    </div>
-
-    <label>Code de transaction Mobile Money :</label>
-    <input type="text" name="Code Transaction" required>
-
-    <label>Adresse de livraison :</label>
-    <textarea name="Adresse" rows="3"></textarea>
-
-    <button type="submit">Envoyer la commande</button>
-
-    <p style="text-align:center; margin-top:20px;">
-      <a href="merci.html">➡️ Cliquez ici après avoir envoyé pour voir votre reçu</a>
-    </p>
+    <button type="submit">Commander via WhatsApp</button>
   </form>
+
+  <script>
+    function envoyerWhatsApp() {
+      const produit = document.getElementById("produit").value;
+      const transaction = document.getElementById("transaction").value;
+
+      const numeroWhatsApp = "22996600126"; // ← Mets ici ton numéro WhatsApp avec indicatif du Bénin
+      const message = `Bonjour, je souhaite commander : ${produit}%0ACode MoMo : ${transaction}`;
+      const url = `https://wa.me/${numeroWhatsApp}?text=${message}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
