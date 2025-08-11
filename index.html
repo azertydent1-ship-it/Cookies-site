@@ -330,21 +330,29 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <form action="https://formsubmit.co/azerty.dent1@gmail.com" method="POST">
-            <input type="text" name="nom" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre email" required>
-            <textarea name="message" placeholder="Votre commande (type de cookies, quantité...)" rows="5" required></textarea>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://DenisADOMOU.github.io/cookies-site/merci.html">
-            <button type="submit">Envoyer la commande</button>
-        </form>
-        <p>Ou commandez directement :</p>
-        <a href="https://wa.me/2290196600126" target="_blank" class="whatsapp-btn">
-        📱 Commander via WhatsApp
-        </a>
-        <div style="color:#a67c52;font-size:1em;margin-top:12px;">
-            Tel: +22996600126
-        </div>
+       <form action="https://formsubmit.co/azerty.dent1@gmail.com" method="POST">
+  <input type="text" name="nom" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <textarea name="message" placeholder="Votre commande (type de cookies, quantité...)" rows="5" required></textarea>
+
+  <!-- Anti-spam simple -->
+  <input type="text" name="_honey" style="display:none" />
+  <input type="hidden" name="_captcha" value="false" />
+
+  <!-- Redirection correcte après envoi -->
+  <input type="hidden" name="_next" value="https://azertydent1-ship-it.github.io/Cookies-site/merci.html" />
+
+  <button type="submit">Envoyer la commande</button>
+</form>
+
+<p>Ou commandez directement :</p>
+<!-- Vérifie le numéro (exemple sans le 0 après +229) -->
+<a href="https://wa.me/22996600126" target="_blank" class="whatsapp-btn">
+  📱 Commander via WhatsApp
+</a>
+<div style="color:#a67c52;font-size:1em;margin-top:12px;">
+  Tel: +229 96 60 01 26
+</div>
     </section>
 
     <footer>
