@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Commande Shan's Cookies Délices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #fff8f0;
       padding: 20px;
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
     }
     h1 {
@@ -20,12 +21,15 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    select, input[type="text"], button {
+    select,
+    input[type="text"],
+    button {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
     }
     button {
       background-color: #a0522d;
@@ -42,11 +46,79 @@
       border: 1px dashed #a0522d;
       margin-top: 20px;
     }
+    /* Carrousel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 20px 0;
+      height: 300px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      color: #a0522d;
+      font-weight: bold;
+      font-size: 1.3em;
+      user-select: none;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(85%);
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 248, 240, 0.75);
+      padding: 8px 20px;
+      border-radius: 20px;
+      color: #a0522d;
+      text-shadow: 1px 1px 2px #fff;
+    }
   </style>
 </head>
 <body>
 
   <h1>🍪 Commande Shan's Cookies Délices</h1>
+
+  <!-- Carrousel -->
+  <div class="carousel" aria-label="Menu des cookies en défilement">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1600891964099-37e4c35b3e08?w=800&q=70&auto=format&fit=crop" alt="Choco Craquant">
+        <div class="carousel-caption">Choco Craquant</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1617196039897-1f6f3b7c1e3e?w=800&q=70&auto=format&fit=crop" alt="Vanille Passion">
+        <div class="carousel-caption">Vanille Passion</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1617196398546-4dfbc1f11e2f?w=800&q=70&auto=format&fit=crop" alt="Caramel Beurre Salé">
+        <div class="carousel-caption">Caramel Beurre Salé</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1599785209707-28c1e42d8a01?w=800&q=70&auto=format&fit=crop" alt="Noix de Coco Rêvée">
+        <div class="carousel-caption">Noix de Coco Rêvée</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1572441710753-f3bdf675d692?w=800&q=70&auto=format&fit=crop" alt="Citron Gingembre">
+        <div class="carousel-caption">Citron Gingembre</div>
+      </div>
+    </div>
+  </div>
 
   <div class="info-paiement">
     <p><strong>Étape 1 :</strong> Faites le paiement via MTN MoMo au <strong>+229 96600126</strong></p>
@@ -65,54 +137,43 @@
     </select>
 
     <label for="transaction">Code de transaction MoMo :</label>
-    <input type="text" id="transaction" placeholder="Ex: 123456789" pattern="[0-9]{9}" title="Le code doit contenir 9 chiffres" required>
+    <input
+      type="text"
+      id="transaction"
+      placeholder="Ex: 123456789"
+      pattern="[0-9]{9}"
+      title="Le code doit contenir 9 chiffres"
+      required
+    />
 
     <button type="submit">Valider la commande</button>
   </form>
 
   <script>
-    document.getElementById("commandeForm").addEventListener("submit", function(e) {
+    // Envoi vers WhatsApp
+    document.getElementById("commandeForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      
-      let produit = document.getElementById("produit").value;
-      let code = document.getElementById("transaction").value;
-
-      // Vérifie que le code a bien 9 chiffres
-      let regex = /^[0-9]{9}$/;
+      const produit = document.getElementById("produit").value;
+      const code = document.getElementById("transaction").value;
+      const regex = /^[0-9]{9}$/;
       if (!regex.test(code)) {
         alert("❌ Le code de transaction doit contenir exactement 9 chiffres.");
         return;
       }
-
-      // Message pour WhatsApp
-      let message = `Bonjour, j'ai payé pour la saveur "${produit}" avec le code de transaction ${code}.`;
-      let whatsappURL = `https://wa.me/22996600126?text=${encodeURIComponent(message)}`;
-      
-      // Redirection vers WhatsApp
+      const message = `Bonjour, j'ai payé pour la saveur "${produit}" avec le code de transaction ${code}.`;
+      const whatsappURL = `https://wa.me/22996600126?text=${encodeURIComponent(message)}`;
       window.open(whatsappURL, "_blank");
     });
-  </script>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Mon site intégré</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100vh; /* pleine hauteur de l'écran */
-        }
-    </style>
-</head>
-<body>
-    <iframe src="https://azertydent1-ship-it.github.io/Cookies-site/"></iframe>
-</body>
-</html>
 
+    // Carrousel automatique
+    const track = document.getElementById("carouselTrack");
+    const slides = track.children;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  </script>
 </body>
 </html>
