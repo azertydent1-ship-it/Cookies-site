@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Délices de Denis</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            color: #4e342e;
+        }
+        header {
+            background-color: #6d4c41;
+            padding: 15px 20px;
+            color: white;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1600891964099-37e4c35b3e08') center/cover no-repeat;
+            color: white;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 10px 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #6d4c41;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        form button {
+            background-color: #6d4c41;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #4e342e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Les Délices de Denis</h1>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#produits">Nos Produits</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <h1>Des cookies faits avec amour ❤️</h1>
+    </section>
+
+    <section id="apropos">
+        <h2>À propos</h2>
+        <p>Bienvenue chez <strong>Les Délices de Denis</strong> !  
+        Nous préparons des cookies artisanaux avec des ingrédients de qualité pour ravir vos papilles.  
+        Que ce soit pour un goûter, un événement ou juste pour le plaisir, nos cookies sont là pour vous faire sourire.</p>
+    </section>
+
+    <section id="produits">
+        <h2>Nos Produits</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1600891964099-37e4c35b3e08" alt="Cookie chocolat">
+                <h3>Cookie Chocolat</h3>
+                <p>Un classique moelleux avec des pépites de chocolat noir fondantes.</p>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1617196039897-1f6f3b7c1e3e" alt="Cookie caramel">
+                <h3>Cookie Caramel Beurre Salé</h3>
+                <p>Un goût unique entre douceur et caractère, avec du caramel coulant.</p>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1599785209707-28c1e42d8a01" alt="Cookie noix">
+                <h3>Cookie Noix & Miel</h3>
+                <p>Pour les amateurs de saveurs naturelles et gourmandes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Les Délices de Denis - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
