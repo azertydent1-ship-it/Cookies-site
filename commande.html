@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Commande Cookies – Paiement Mobile</title>
+  <title>Commande Cookies – Shan's Délices</title>
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
@@ -11,7 +11,7 @@
       color: #4e342e;
     }
     form {
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
       background: white;
       padding: 20px;
@@ -43,6 +43,14 @@
       border-radius: 8px;
       margin-top: 15px;
     }
+    h2 {
+      text-align: center;
+      color: #d81b60;
+    }
+    optgroup {
+      font-weight: bold;
+      color: #6a1b9a;
+    }
   </style>
 </head>
 <body>
@@ -57,10 +65,30 @@
     <input type="text" name="Téléphone" required>
 
     <label>Choix des cookies :</label>
-    <select name="Produit">
-      <option>Cookie Chocolat</option>
-      <option>Cookie Caramel Beurre Salé</option>
-      <option>Cookie Noix & Miel</option>
+    <select name="Produit" required>
+      <optgroup label="🍯 Saveurs uniques">
+        <option>Vanille</option>
+        <option>Noisettes Grillées</option>
+        <option>Miel Doré</option>
+        <option>Muscade</option>
+        <option>Chocolat Noir</option>
+        <option>Chocolat Blanc</option>
+      </optgroup>
+      <optgroup label="🍪 Duos deux saveurs">
+        <option>Vanille & Noisettes</option>
+        <option>Vanille & Miel</option>
+        <option>Miel & Chocolat Noir</option>
+        <option>Chocolat Blanc & Muscade</option>
+        <option>Vanille & Chocolat Noir</option>
+        <option>Noisettes & Chocolat Blanc</option>
+      </optgroup>
+      <optgroup label="🍫 Trios de saveurs">
+        <option>Vanille, Noisettes & Miel</option>
+        <option>Vanille, Chocolat Noir & Noisettes</option>
+        <option>Muscade, Chocolat Noir & Noisettes</option>
+        <option>Vanille, Miel & Chocolat Blanc</option>
+        <option>Noisettes, Muscade & Chocolat Noir</option>
+      </optgroup>
     </select>
 
     <label>Quantité :</label>
@@ -78,6 +106,10 @@
     <textarea name="Adresse" rows="3"></textarea>
 
     <button type="submit">Envoyer la commande</button>
+
+    <p style="text-align:center; margin-top:20px;">
+      <a href="merci.html">➡️ Cliquez ici après avoir envoyé pour voir votre reçu</a>
+    </p>
   </form>
 
 </body>
