@@ -177,5 +177,159 @@
       track.style.transform = `translateX(-${index * 100}%)`;
     }, 3000);
   </script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shan's Cookies Délices</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+    }
+
+    /* En-tête avec logo et menu */
+    header {
+      background-color: #a0522d;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav select {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #6b3e26;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .cookie-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .cookie-card:hover {
+      transform: scale(1.03);
+    }
+
+    .cookie-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cookie-card h3 {
+      margin: 15px 0 5px;
+      color: #6b3e26;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .cookie-card p {
+      text-align: center;
+      color: #444;
+      padding: 0 15px 10px;
+      font-size: 0.95em;
+    }
+
+    footer {
+      background-color: #a0522d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cookie-card {
+        width: 90%;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête avec logo et menu -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Logo Shan's Cookies">
+    <nav>
+      <label for="menu">Nos Saveurs :</label>
+      <select id="menu" onchange="alert('Vous avez choisi : ' + this.value)">
+        <option value="">-- Sélectionnez --</option>
+        <option value="Choco Craquant">Choco Craquant</option>
+        <option value="Vanille Passion">Vanille Passion</option>
+        <option value="Caramel Beurre Salé">Caramel Beurre Salé</option>
+        <option value="Noix de Coco Rêvée">Noix de Coco Rêvée</option>
+        <option value="Citron Gingembre">Citron Gingembre</option>
+      </select>
+    </nav>
+  </header>
+
+  <h1>Nos Cookies Artisanaux</h1>
+
+  <!-- Galerie de cookies -->
+  <div class="gallery">
+    <div class="cookie-card">
+      <img src="https://sallysbakingaddiction.com/wp-content/uploads/2013/05/chewy-chocolate-chip-cookies-5.jpg" alt="Choco Craquant">
+      <h3>Choco Craquant</h3>
+      <p>Le cookie fondant aux pépites de chocolat, un incontournable.</p>
+    </div>
+
+    <div class="cookie-card">
+      <img src="https://moribyan.com/wp-content/uploads/2022/05/Cookies-and-Cream-Cookies-Feature.jpg" alt="Cookies & Cream">
+      <h3>Cookies & Cream</h3>
+      <p>Un mélange irrésistible de crème vanillée et morceaux d’Oreo.</p>
+    </div>
+
+    <div class="cookie-card">
+      <img src="https://assets.epicurious.com/photos/5fd8e6c9c9d9c6b9e0c2e5a2/1:1/w_2560%2Cc_limit/Italian-Butter-Cookies_RECIPE_IG_122220_25239.jpg" alt="Beurre Italien">
+      <h3>Beurre Italien</h3>
+      <p>Délicat et sablé, parfait avec un café ou un thé.</p>
+    </div>
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2025 Shan's Cookies Délices – Tous droits réservés</p>
+    <p>Contact : +22996600126 | Instagram : @Shn_bounce</p>
+  </footer>
+
 </body>
 </html>
