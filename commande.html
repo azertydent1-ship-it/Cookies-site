@@ -48,7 +48,6 @@
       margin-top: 20px;
       font-size: 1.1em;
     }
-    /* Carrousel */
     .carousel {
       position: relative;
       width: 100%;
@@ -96,27 +95,26 @@
 
   <h1>🍪 Commande Shan's Cookies Délices</h1>
 
-  <!-- Carrousel -->
   <div class="carousel" aria-label="Menu des cookies en défilement">
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1505253210343-6a6a55a1f1e0?auto=format&fit=crop&w=800&q=70" alt="Choco Craquant">
+        <img src="https://www.valrhona-collection.com/cdn/shop/articles/cookie-praline_ee27398f-88aa-49ab-9eaa-71844a366235_1200x.jpg?v=1751554380" alt="Choco Craquant praline">
         <div class="carousel-caption">Choco Craquant</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1562440499-77ee1bcf4d35?auto=format&fit=crop&w=800&q=70" alt="Vanille Passion">
+        <img src="https://livingsweetmoments.com/wp-content/uploads/2016/05/passion-fruit-thumbprint-cookies-recipe-2.jpg" alt="Vanille Passion fruit de la passion">
         <div class="carousel-caption">Vanille Passion</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1551022373-0c6b5e8dbf35?auto=format&fit=crop&w=800&q=70" alt="Caramel Beurre Salé">
+        <img src="https://eumm8di4sfb.exactdn.com/wp-content/uploads/2021/02/Cookies-caramel-pepites-chocolat-13.jpg?strip=all&lossy=1&quality=75&webp=70&ssl=1" alt="Caramel Beurre Salé gourmand">
         <div class="carousel-caption">Caramel Beurre Salé</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1600717011899-6321b796ef46?auto=format&fit=crop&w=800&q=70" alt="Noix de Coco Rêvée">
+        <img src="https://www.eatsomethingsexy.com/wp-content/uploads/2017/12/dutch-crunchy-coconut-cookies.jpg" alt="Noix de Coco Rêvée cookies coco">
         <div class="carousel-caption">Noix de Coco Rêvée</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1523983305827-763f81956aa2?auto=format&fit=crop&w=800&q=70" alt="Citron Gingembre">
+        <img src="https://fr.rc-cdn.community.thermomix.com/recipeimage/7q7hk5ds-7739f-297634-cfcd2-nfb9t97d/b936d7bf-5634-4e6c-99d6-6860fdf835c1/original/biscuits-citron-gingembre.jpg" alt="Citron Gingembre biscuits">
         <div class="carousel-caption">Citron Gingembre</div>
       </div>
     </div>
@@ -152,12 +150,15 @@
   </form>
 
   <script>
-    // Envoi vers WhatsApp
     document.getElementById("commandeForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const produit = document.getElementById("produit").value;
       const code = document.getElementById("transaction").value;
       const regex = /^[0-9]{9}$/;
+      if (!produit) {
+        alert("Veuillez choisir une saveur.");
+        return;
+      }
       if (!regex.test(code)) {
         alert("❌ Le code de transaction doit contenir exactement 9 chiffres.");
         return;
@@ -167,7 +168,6 @@
       window.open(whatsappURL, "_blank");
     });
 
-    // Carrousel automatique
     const track = document.getElementById("carouselTrack");
     const slides = track.children;
     let index = 0;
