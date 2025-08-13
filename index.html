@@ -9,7 +9,8 @@
   <meta property="og:description" content="Des cookies faits avec amour. Commande rapide par formulaire ou WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://azertydent1-ship-it.github.io/Cookies-site/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1600891964099-37e4c35b3e08?w=1200&q=70&auto=format&fit=crop" />
+  <!-- Mise à jour de l'image Open Graph selon l'image Hero fournie -->
+  <meta property="og:image" content="https://littlespoonfarm.com/wp-content/uploads/2021/10/Chewy-chocolate-chip-cookies-on-a-plate-_.jpg" />
   <meta name="theme-color" content="#f7c873" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +35,6 @@
       color: var(--choco);
     }
 
-    /* --- Animation Gouttes Chocolat --- */
     .choco-drip {
       width: 100%;
       height: 65px;
@@ -113,7 +113,6 @@
       box-shadow: 0 4px 16px #f7c87355;
     }
 
-    /* Focus accessible */
     nav a:focus-visible,
     .whatsapp-btn:focus-visible,
     .product-cta:focus-visible,
@@ -138,14 +137,14 @@
       opacity: 0;
       animation: fadeIn 1.1s forwards;
     }
-    section:nth-of-type(2) { animation-delay: 1.6s; } /* hero */
-    section:nth-of-type(3) { animation-delay: 2.2s; } /* apropos */
-    section:nth-of-type(4) { animation-delay: 2.8s; } /* produits */
-    section:nth-of-type(5) { animation-delay: 3.2s; } /* contact */
+    section:nth-of-type(2) { animation-delay: 1.6s; }
+    section:nth-of-type(3) { animation-delay: 2.2s; }
+    section:nth-of-type(4) { animation-delay: 2.8s; }
+    section:nth-of-type(5) { animation-delay: 3.2s; }
 
     .hero {
       padding: 54px 20px 36px 20px;
-      background: url('https://images.unsplash.com/photo-1600891964099-37e4c35b3e08?w=1400&q=70&auto=format&fit=crop') center/cover no-repeat;
+      background: url('https://littlespoonfarm.com/wp-content/uploads/2021/10/Chewy-chocolate-chip-cookies-on-a-plate-_.jpg') center/cover no-repeat;
       border-radius: 28px;
       margin: 28px auto 30px auto;
       max-width: 900px;
@@ -323,13 +322,8 @@
       box-shadow: 0 6px 20px #25d36699;
     }
 
-    .cookie-emoji {
-      font-size: 1.3em;
-      margin-right: 7px;
-      vertical-align: -2px;
-    }
+    .cookie-emoji { font-size: 1.3em; margin-right: 7px; vertical-align: -2px; }
 
-    /* Sticky nav sur mobile */
     @media (max-width: 700px) {
       nav {
         position: sticky;
@@ -389,8 +383,8 @@
     <div class="products">
       <div class="product">
         <img
-          src="https://images.unsplash.com/photo-1600891964099-37e4c35b3e08?w=800&q=70&auto=format&fit=crop"
-          alt="Cookie chocolat avec pépites fondantes"
+          src="https://jamiegeller.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTY1NTI0ODM1MDA3MDc5OTc0/chocolate-chocolate-cookies.webp"
+          alt="Cookie chocolat double chocolat avec pépites"
           width="800" height="600"
           loading="lazy"
         />
@@ -401,8 +395,8 @@
 
       <div class="product">
         <img
-          src="https://images.unsplash.com/photo-1617196039897-1f6f3b7c1e3e?w=800&q=70&auto=format&fit=crop"
-          alt="Cookie caramel beurre salé coulant"
+          src="https://lesgourmandisesdekarelle.com/wp-content/uploads/2021/01/IMG-3283-1.jpg"
+          alt="Cookie caramel beurre salé avec coulure de caramel"
           width="800" height="600"
           loading="lazy"
         />
@@ -413,8 +407,8 @@
 
       <div class="product">
         <img
-          src="https://images.unsplash.com/photo-1599785209707-28c1e42d8a01?w=800&q=70&auto=format&fit=crop"
-          alt="Cookie aux noix et au miel"
+          src="https://elodiecharbonnier-dieteticienne.fr/wp-content/uploads/2020/11/E632702E-B711-4DFA-949F-7C1700EB3472_1_201_a.jpeg"
+          alt="Cookie aux noix et miel doré"
           width="800" height="600"
           loading="lazy"
         />
@@ -432,11 +426,8 @@
       <input type="email" name="email" placeholder="Votre email" required />
       <textarea name="message" placeholder="Votre commande (type de cookies, quantité...)" rows="5" required></textarea>
 
-      <!-- Anti-spam -->
       <input type="text" name="_honey" style="display:none" />
       <input type="hidden" name="_captcha" value="false" />
-
-      <!-- Redirection après envoi -->
       <input type="hidden" name="_next" value="https://azertydent1-ship-it.github.io/Cookies-site/merci.html" />
 
       <button type="submit">Envoyer la commande</button>
